@@ -5,6 +5,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
+# Creating the project
+npx create-next-app@latest
+# Running the project
 npm run dev
 # or
 yarn dev
@@ -34,3 +37,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### React Server Component(RSC)
+
+New architecture created by React and quickly adopted by Next.js
+
+Two distinct types of components:
+
+- Server Components
+  - All components are considered server components.
+  - They can perform back end services and database access.
+  - They can't use React Hooks.
+- Client Components
+  - Client component, add `use client` directive on top of your component file.
+  - As they can't perform serve-side functions, they can use hooks.
