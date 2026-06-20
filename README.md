@@ -38,11 +38,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+## Architecture and Development
+
 ### React Server Component(RSC)
 
 New architecture created by React and quickly adopted by Next.js
 
-Two distinct types of components:
+#### Two distinct types of components:
 
 - Server Components
   - All components are considered server components.
@@ -51,3 +53,41 @@ Two distinct types of components:
 - Client Components
   - Client component, add `use client` directive on top of your component file.
   - As they can't perform serve-side functions, they can use hooks.
+  - Client Components are traditional React components.
+
+### Routing
+
+Next.js has a file-system based routing system
+URLs in the project are determined by how you organise your folders and files.
+
+#### Route Conventions
+
+1. All routes must be inside app folder
+2. Route files must be named page.js or page.tsx
+3. Each folder represents a segment of the URL path
+
+##### Nested Routes
+
+Just need to create new folders inside the parent folder.
+ex:
+
+- localhost:3000/blogs
+- localhost:3000/blogs/first
+- localhost:3000/blogs/second
+
+##### Dynamic Routes
+
+ex:
+
+- localhost:3000/products
+- localhost:3000/products/1
+- localhost:3000/products/2
+
+Create a folder with bracket. ex: products/[productId]
+
+##### Nested Dynamic Routes
+
+Ex:
+
+- localhost:3000/products/1/review/1
+  Create a folder with bracket. ex: products/[productId]/reviews/[reviewId]
